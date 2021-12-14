@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\dmozgr\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dmozgr\\.nuget\\packages"
+    ]
+  }
+}
