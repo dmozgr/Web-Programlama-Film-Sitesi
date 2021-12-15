@@ -28,8 +28,8 @@ namespace WebProgrammingMovie
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-              .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI();
+            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+              .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultUI().AddDefaultTokenProviders().AddRoles<IdentityRole>();
 
             services.AddRazorPages();
 
@@ -43,6 +43,7 @@ namespace WebProgrammingMovie
             services.AddControllersWithViews();
 
             services.AddScoped<IDbInitializer, DbInitializer>();
+      
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

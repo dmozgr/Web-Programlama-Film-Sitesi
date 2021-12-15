@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -46,22 +49,42 @@
                                         <li><a href="./login.html">Login</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./blog.html">Our Blog</a></li>
                                 <li><a href="#">Contacts</a></li>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li><a href="#">Admin Paneli</a></li>
+}
+                                @if  (User.IsInRole("Uye"))
+                                {
+                                    <li><a href="#">Üye Ekranı</a></li>
+}
                             </ul>
                         </nav>
                     </div>
                 </div>
-                <div class="col-lg-1">
+
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Click here to Logout</button>
+                    </form> 
+                }
+                else
+                {
+                    <div class="col-lg-1">
                     <div class="header__right">
-                        <a style="font-size: 18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Kayıt</a>
+                    <a style="font-size: 18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Kayıt</a>
                     </div>
-                </div>
-                <div class="col-lg-1">
+                    </div>
+                    <div class="col-lg-1">
                     <div class="header__right">
-                        <a style="font-size:18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Giriş</a>
+                    <a style="font-size:18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Giriş</a>
                     </div>
-                </div>
+                    </div>
+                }
+
+
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
@@ -108,7 +131,6 @@
     </footer>
     <!-- Footer Section End -->
     <!-- Search model Begin -->
-
     <!-- Search model end -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
