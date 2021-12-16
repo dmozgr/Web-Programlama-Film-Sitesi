@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WebProgrammingMovie.Models
 {
-    public class Photo
+    public class Director
     {
         public int Id { get; set; }
 
-        public string PhotoName { get; set; }
+        public string DirectorName { get; set; }
 
         public int? MovieId { get; set; }
         [ForeignKey("MovieId")]

@@ -21,21 +21,24 @@ namespace WebProgrammingMovie.Models
         public int? CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
-        public int? PhotoId { get; set; }
-        [ForeignKey("PhotoId")]
-        public Photo Photo { get; set; }
 
-        public string Actor { get; set; }
+        public ICollection<Photo> Photo { get; set; }
 
-        public string Director { get; set; }
+        public ICollection<Actor> Actor { get; set; }
+
+        public ICollection<Director> Director{ get; set; }
+
+        public ICollection<Rating> Rating { get; set; }
+
 
         public DateTime ReleaseDate { get; set; }
 
         public int Duration { get; set; }
 
+        public double IMDB { get; set; }
+
         public CountryEnum Country { get; set; }
 
-        public ICollection<Rating> Rating { get; set; }
     }
     
 

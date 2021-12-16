@@ -7498,11 +7498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dmozgr\\Documents\\GitHub\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+      "projectUniqueName": "C:\\Users\\dmozgr\\Documents\\GitHub\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
       "projectName": "WebProgrammingMovie",
-      "projectPath": "C:\\Users\\dmozgr\\Documents\\GitHub\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+      "projectPath": "C:\\Users\\dmozgr\\Documents\\GitHub\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
       "packagesPath": "C:\\Users\\dmozgr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dmozgr\\Documents\\GitHub\\WebProgrammingMovie\\obj\\",
+      "outputPath": "C:\\Users\\dmozgr\\Documents\\GitHub\\Web-Programlama\\WebProgrammingMovie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dmozgr\\AppData\\Roaming\\NuGet\\NuGet.Config",

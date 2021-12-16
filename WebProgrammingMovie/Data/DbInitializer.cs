@@ -50,7 +50,7 @@ namespace WebProgrammingMovie.Data
                 UserName = "admin@gmail.com",
                 Email = "admin@gmail.com",
                 Name = "Umut ",
-                SurName="DELİMEHMETOGLU",
+                Surname="DELİMEHMETOGLU",
                 EmailConfirmed = true,
                 PhoneNumber = "1112223333"
             }, "Admin123*").GetAwaiter().GetResult();

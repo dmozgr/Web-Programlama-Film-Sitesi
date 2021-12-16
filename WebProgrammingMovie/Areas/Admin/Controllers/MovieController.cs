@@ -23,7 +23,7 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
         // GET: Admin/Movie
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Movie.Include(m => m.Category).Include(m => m.Photo);
+            var applicationDbContext = _context.Movie.Include(m => m.Category);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -37,7 +37,6 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
 
             var movie = await _context.Movie
                 .Include(m => m.Category)
-                .Include(m => m.Photo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {
@@ -47,16 +46,10 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
             return View(movie);
         }
 
-        public IActionResult MovieGet()
-        {
-            var result = _context.Movie.ToList();
-            return View(result);
-        }
         // GET: Admin/Movie/Create
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name");
-            ViewData["PhotoId"] = new SelectList(_context.Photo, "Id", "Id");
             return View();
         }
 
@@ -65,7 +58,7 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Review,CategoryId,PhotoId,Actor,Director,ReleaseDate,Duration,Country")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Name,Review,CategoryId,ReleaseDate,Duration,IMDB,Country")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -74,7 +67,6 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name", movie.CategoryId);
-            ViewData["PhotoId"] = new SelectList(_context.Photo, "Id", "Id", movie.PhotoId);
             return View(movie);
         }
 
@@ -92,7 +84,6 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name", movie.CategoryId);
-            ViewData["PhotoId"] = new SelectList(_context.Photo, "Id", "Id", movie.PhotoId);
             return View(movie);
         }
 
@@ -101,7 +92,7 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Review,CategoryId,PhotoId,Actor,Director,ReleaseDate,Duration,Country")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Review,CategoryId,ReleaseDate,Duration,IMDB,Country")] Movie movie)
         {
             if (id != movie.Id)
             {
@@ -129,7 +120,6 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name", movie.CategoryId);
-            ViewData["PhotoId"] = new SelectList(_context.Photo, "Id", "Id", movie.PhotoId);
             return View(movie);
         }
 
@@ -143,7 +133,6 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
 
             var movie = await _context.Movie
                 .Include(m => m.Category)
-                .Include(m => m.Photo)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (movie == null)
             {

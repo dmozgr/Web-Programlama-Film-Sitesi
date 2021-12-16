@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebProgrammingMovie.Data;
 
-namespace WebProgrammingMovie.Data.Migrations
+namespace WebProgrammingMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211215213647_first")]
+    [Migration("20211216182512_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,6 +223,26 @@ namespace WebProgrammingMovie.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("WebProgrammingMovie.Models.Actor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MovieId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("Actor");
+                });
+
             modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -239,6 +259,26 @@ namespace WebProgrammingMovie.Data.Migrations
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("WebProgrammingMovie.Models.Director", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DirectorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("MovieId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.ToTable("Director");
+                });
+
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -246,27 +286,21 @@ namespace WebProgrammingMovie.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Actor")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<int>("Country")
                         .HasColumnType("int");
 
-                    b.Property<string>("Director")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Duration")
                         .HasColumnType("int");
+
+                    b.Property<double>("IMDB")
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PhotoId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
@@ -278,8 +312,6 @@ namespace WebProgrammingMovie.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("PhotoId");
-
                     b.ToTable("Movie");
                 });
 
@@ -290,10 +322,15 @@ namespace WebProgrammingMovie.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("MovieId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PhotoName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
 
                     b.ToTable("Photo");
                 });
@@ -343,7 +380,7 @@ namespace WebProgrammingMovie.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SurName")
+                    b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -401,19 +438,40 @@ namespace WebProgrammingMovie.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("WebProgrammingMovie.Models.Actor", b =>
+                {
+                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
+                        .WithMany("Actor")
+                        .HasForeignKey("MovieId");
+
+                    b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("WebProgrammingMovie.Models.Director", b =>
+                {
+                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
+                        .WithMany("Director")
+                        .HasForeignKey("MovieId");
+
+                    b.Navigation("Movie");
+                });
+
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
                     b.HasOne("WebProgrammingMovie.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("WebProgrammingMovie.Models.Photo", "Photo")
-                        .WithMany()
-                        .HasForeignKey("PhotoId");
-
                     b.Navigation("Category");
+                });
 
-                    b.Navigation("Photo");
+            modelBuilder.Entity("WebProgrammingMovie.Models.Photo", b =>
+                {
+                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
+                        .WithMany("Photo")
+                        .HasForeignKey("MovieId");
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Rating", b =>
@@ -433,6 +491,12 @@ namespace WebProgrammingMovie.Data.Migrations
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
+                    b.Navigation("Actor");
+
+                    b.Navigation("Director");
+
+                    b.Navigation("Photo");
+
                     b.Navigation("Rating");
                 });
 #pragma warning restore 612, 618

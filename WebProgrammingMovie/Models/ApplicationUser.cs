@@ -12,15 +12,11 @@ namespace WebProgrammingMovie.Models
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        [Display(Name = "Ad")]
         public string Name { get; set; }
         [Required]
-        [Display(Name = "Soyad")]
-        public string SurName { get; set; }
-        [Display(Name = "Doğum Tarihi")]
+        public string Surname { get; set; }
+        [Display(Name = "Birth Date")]
         public DateTime? BirthDate { get; set; }
-        [Required]
-        [Display(Name = "Ülke")]
         public CountryEnum Country { get; set; }
 
         [NotMapped]
@@ -28,7 +24,7 @@ namespace WebProgrammingMovie.Models
         {
             get
             {
-                return Name + " " + SurName;
+                return Name + " " + Surname;
             }
         }
 

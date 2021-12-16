@@ -90,7 +90,7 @@ namespace WebProgrammingMovie.Areas.Identity.Pages.Account
                     UserName = Input.Email,
                     Email = Input.Email,
                     Name = Input.Name,
-                    SurName = Input.SurName,
+                    Surname = Input.SurName,
                     BirthDate = Input.BirthDate,
                     Country = Input.Country,
                 };
