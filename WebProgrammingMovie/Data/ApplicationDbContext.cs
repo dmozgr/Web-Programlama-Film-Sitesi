@@ -9,9 +9,7 @@ namespace WebProgrammingMovie.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<Actor> Actor { get; set; }
         public DbSet<Category> Category { get; set; }
-        public DbSet<Director> Director { get; set; }
         public DbSet<Movie> Movie { get; set; }
         public DbSet<Photo> Photo { get; set; }
         public DbSet<Rating> Rating { get; set; }

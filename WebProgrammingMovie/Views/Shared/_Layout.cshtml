@@ -29,7 +29,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a asp-area="" asp-controller="Home" asp-action="Index">
-                            <img src="~/img/movie.jpg" alt="">
+                            <img src="~/img/movie.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -52,7 +52,15 @@
                                 <li><a href="#">Contacts</a></li>
                                 @if (User.IsInRole("Admin"))
                                 {
-                                    <li><a href="#">Admin Paneli</a></li>
+                            <li>
+                                <a asp-area="Admin" asp-controller="Movie" asp-action="Index">Admin Paneli</a>
+                                <ul class="dropdown">
+                                    <li><a asp-area="Admin" asp-controller="Movie" asp-action="Index">Filmler</a></li>
+                                    <li><a asp-area="Admin" asp-controller="Categories" asp-action="Index">Kategoriler</a></li>
+                                    <li><a asp-area="Admin" asp-controller="Photos" asp-action="Index">Fotoğraflar</a></li>
+                                </ul>
+                            </li>
+
 }
                                 @if  (User.IsInRole("Uye"))
                                 {

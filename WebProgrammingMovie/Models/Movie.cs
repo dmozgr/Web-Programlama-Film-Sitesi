@@ -13,7 +13,7 @@ namespace WebProgrammingMovie.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Movie Name")]
+        [Display(Name = "Film Adı")]
         public string Name { get; set; }
 
         public string Review { get; set; }
@@ -21,14 +21,13 @@ namespace WebProgrammingMovie.Models
         public int? CategoryId { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
-
+        public int? PhotoId { get; set; }
+        [ForeignKey("PhotoId")]
         public Photo Photo { get; set; }
 
-        public ICollection<Actor> Actor { get; set; }
+        public string Actor { get; set; }
 
-        public int? DirectorId { get; set; }
-        [ForeignKey("DirectorId")]
-        public Director Director { get; set; }
+        public string Director { get; set; }
 
         public DateTime ReleaseDate { get; set; }
 

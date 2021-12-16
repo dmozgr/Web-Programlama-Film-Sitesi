@@ -10,8 +10,8 @@ using WebProgrammingMovie.Data;
 namespace WebProgrammingMovie.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211213211635_firstolustur")]
-    partial class firstolustur
+    [Migration("20211215213647_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,21 +20,6 @@ namespace WebProgrammingMovie.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("ActorMovie", b =>
-                {
-                    b.Property<int>("ActorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ActorId", "MovieId");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("ActorMovie");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -238,27 +223,6 @@ namespace WebProgrammingMovie.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("WebProgrammingMovie.Models.Actor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SurName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Actor");
-                });
-
             modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -275,24 +239,6 @@ namespace WebProgrammingMovie.Data.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("WebProgrammingMovie.Models.Director", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SurName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Director");
-                });
-
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
@@ -300,14 +246,17 @@ namespace WebProgrammingMovie.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Actor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<int>("Country")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DirectorId")
-                        .HasColumnType("int");
+                    b.Property<string>("Director")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Duration")
                         .HasColumnType("int");
@@ -315,6 +264,9 @@ namespace WebProgrammingMovie.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PhotoId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
@@ -326,7 +278,7 @@ namespace WebProgrammingMovie.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("DirectorId");
+                    b.HasIndex("PhotoId");
 
                     b.ToTable("Movie");
                 });
@@ -338,20 +290,10 @@ namespace WebProgrammingMovie.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PhotoName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UrunId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UrunId")
-                        .IsUnique()
-                        .HasFilter("[UrunId] IS NOT NULL");
 
                     b.ToTable("Photo");
                 });
@@ -406,21 +348,6 @@ namespace WebProgrammingMovie.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
-                });
-
-            modelBuilder.Entity("ActorMovie", b =>
-                {
-                    b.HasOne("WebProgrammingMovie.Models.Actor", null)
-                        .WithMany()
-                        .HasForeignKey("ActorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebProgrammingMovie.Models.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -480,22 +407,13 @@ namespace WebProgrammingMovie.Data.Migrations
                         .WithMany()
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("WebProgrammingMovie.Models.Director", "Director")
-                        .WithMany("Movie")
-                        .HasForeignKey("DirectorId");
+                    b.HasOne("WebProgrammingMovie.Models.Photo", "Photo")
+                        .WithMany()
+                        .HasForeignKey("PhotoId");
 
                     b.Navigation("Category");
 
-                    b.Navigation("Director");
-                });
-
-            modelBuilder.Entity("WebProgrammingMovie.Models.Photo", b =>
-                {
-                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
-                        .WithOne("Photo")
-                        .HasForeignKey("WebProgrammingMovie.Models.Photo", "UrunId");
-
-                    b.Navigation("Movie");
+                    b.Navigation("Photo");
                 });
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Rating", b =>
@@ -513,15 +431,8 @@ namespace WebProgrammingMovie.Data.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("WebProgrammingMovie.Models.Director", b =>
-                {
-                    b.Navigation("Movie");
-                });
-
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
-                    b.Navigation("Photo");
-
                     b.Navigation("Rating");
                 });
 #pragma warning restore 612, 618
