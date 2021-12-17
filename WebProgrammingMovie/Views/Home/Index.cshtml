@@ -1,30 +1,29 @@
 ﻿@{ ViewData["Title"] = "Home Page"; }
-@model dynamic
 
-
+@model WebProgrammingMovie.Models.HomeViewModel
 
 <section class="hero">
     <div class="container">
         <div class="hero__slider owl-carousel">
             @{
-                for (int i = 0; i < 10; i++)
+                foreach (var item in Model._TrendMovie)
                 {
-                    <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="hero__text">
-                                    <div class="label">Adventure</div>
-                                    <h2>Fate / Stay Night: Unlimited Blade Worksss</h2>
-                                    <p>After 30 days of travel across the world...</p>
-                                    <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
-                                </div>
+                    <div class="hero__items set-bg" data-setbg="img/filmfoto/cehennemmelekleri.jpg">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <div class="label">@item.Category.Name</div>
+                                <h2>@item.Name</h2>
+                                <p>@item.Review</p>
+                                <a asp-controller="Movie" asp-action="Index" asp-route-id="@item.Id"><span>Şimdi İzle</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
+                </div>
                 }
             }
         </div>
-    </div>
+        </div>
 </section>
 
 <!-- Hero Section End -->
@@ -59,7 +58,7 @@
                                                 <li>Active</li>
                                                 <li>Movie</li>
                                             </ul>
-                                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                            <h5><a asp-controller="Movie" asp-action="Index">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                                         </div>
                                     </div>
                                 </div>

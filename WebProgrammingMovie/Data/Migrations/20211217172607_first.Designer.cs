@@ -10,7 +10,7 @@ using WebProgrammingMovie.Data;
 namespace WebProgrammingMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211216182512_first")]
+    [Migration("20211217172607_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -250,11 +250,16 @@ namespace WebProgrammingMovie.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("MovieId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
 
                     b.ToTable("Category");
                 });
@@ -292,8 +297,8 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<int>("Country")
                         .HasColumnType("int");
 
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
+                    b.Property<double>("Duration")
+                        .HasColumnType("float");
 
                     b.Property<double>("IMDB")
                         .HasColumnType("float");
@@ -307,6 +312,9 @@ namespace WebProgrammingMovie.Migrations
 
                     b.Property<string>("Review")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("View")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -442,6 +450,15 @@ namespace WebProgrammingMovie.Migrations
                 {
                     b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
                         .WithMany("Actor")
+                        .HasForeignKey("MovieId");
+
+                    b.Navigation("Movie");
+                });
+
+            modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>
+                {
+                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
+                        .WithMany()
                         .HasForeignKey("MovieId");
 
                     b.Navigation("Movie");

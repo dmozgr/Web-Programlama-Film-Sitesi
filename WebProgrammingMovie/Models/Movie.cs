@@ -18,9 +18,11 @@ namespace WebProgrammingMovie.Models
 
         public string Review { get; set; }
 
-        public int? CategoryId { get; set; }
+        [Display(Name = "Kategori")]
+        public virtual int? CategoryId { get; set; }
+
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         public ICollection<Photo> Photo { get; set; }
 
@@ -33,11 +35,13 @@ namespace WebProgrammingMovie.Models
 
         public DateTime ReleaseDate { get; set; }
 
-        public int Duration { get; set; }
+        public double Duration { get; set; }
+        public int View { get; set; }
 
         public double IMDB { get; set; }
 
         public CountryEnum Country { get; set; }
+
 
     }
     
