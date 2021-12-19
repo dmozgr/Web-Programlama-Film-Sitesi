@@ -793,3 +793,15 @@ C:\Users\dmozgr\Documents\GitHub\web-programlama\WebProgrammingMovie\obj\Debug\n
 C:\Users\dmozgr\Documents\GitHub\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Photo\Details.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Photo\Edit.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Photo\Index.cshtml.g.cs
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.csproj.AssemblyReference.cache
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.AssemblyInfoInputs.cache
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.AssemblyInfo.cs
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.csproj.CoreCompileInputs.cache
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.RazorAssemblyInfo.cache
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.RazorAssemblyInfo.cs
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.dll
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\ref\WebProgrammingMovie.dll
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.pdb
