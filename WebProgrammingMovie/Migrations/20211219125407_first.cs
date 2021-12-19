@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebProgrammingMovie.Migrations
 {
-    public partial class MovieData : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,6 +31,7 @@ namespace WebProgrammingMovie.Migrations
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Country = table.Column<int>(type: "int", nullable: true),
+                    PhotoURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -62,6 +63,19 @@ namespace WebProgrammingMovie.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Category", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Director",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DirectorName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Director", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -178,9 +192,13 @@ namespace WebProgrammingMovie.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Review = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    View = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: true),
+                    DirectorId = table.Column<int>(type: "int", nullable: true),
+                    SliderPhotoURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DetailPhotoURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Duration = table.Column<int>(type: "int", nullable: false),
+                    Duration = table.Column<double>(type: "float", nullable: false),
                     IMDB = table.Column<double>(type: "float", nullable: false),
                     Country = table.Column<int>(type: "int", nullable: false)
                 },
@@ -191,6 +209,12 @@ namespace WebProgrammingMovie.Migrations
                         name: "FK_Movie_Category_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Movie_Director_DirectorId",
+                        column: x => x.DirectorId,
+                        principalTable: "Director",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -209,46 +233,6 @@ namespace WebProgrammingMovie.Migrations
                     table.PrimaryKey("PK_Actor", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Actor_Movie_MovieId",
-                        column: x => x.MovieId,
-                        principalTable: "Movie",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Director",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DirectorName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MovieId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Director", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Director_Movie_MovieId",
-                        column: x => x.MovieId,
-                        principalTable: "Movie",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Photo",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PhotoName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MovieId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Photo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Photo_Movie_MovieId",
                         column: x => x.MovieId,
                         principalTable: "Movie",
                         principalColumn: "Id",
@@ -329,19 +313,14 @@ namespace WebProgrammingMovie.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Director_MovieId",
-                table: "Director",
-                column: "MovieId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Movie_CategoryId",
                 table: "Movie",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Photo_MovieId",
-                table: "Photo",
-                column: "MovieId");
+                name: "IX_Movie_DirectorId",
+                table: "Movie",
+                column: "DirectorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Rating_MovieId",
@@ -375,12 +354,6 @@ namespace WebProgrammingMovie.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Director");
-
-            migrationBuilder.DropTable(
-                name: "Photo");
-
-            migrationBuilder.DropTable(
                 name: "Rating");
 
             migrationBuilder.DropTable(
@@ -394,6 +367,9 @@ namespace WebProgrammingMovie.Migrations
 
             migrationBuilder.DropTable(
                 name: "Category");
+
+            migrationBuilder.DropTable(
+                name: "Director");
         }
     }
 }

@@ -73,6 +73,8 @@ namespace WebProgrammingMovie.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Ülke")]
             public CountryEnum Country { get; set; }
+            public string PhotoURL { get; set; }
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)

@@ -11,7 +11,7 @@ namespace WebProgrammingMovie.Models
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Category Name")]
+        [Display(Name = "Kategori Adı")]
         public string Name { get; set; }
 
         public ICollection<Movie> movies { get; set; }

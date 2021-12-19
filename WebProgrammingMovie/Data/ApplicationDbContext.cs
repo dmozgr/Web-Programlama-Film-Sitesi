@@ -11,12 +11,14 @@ namespace WebProgrammingMovie.Data
     {
         public DbSet<Category> Category { get; set; }
         public DbSet<Movie> Movie { get; set; }
-        public DbSet<Photo> Photo { get; set; }
         public DbSet<Rating> Rating { get; set; }
+        public DbSet<Actor> Actor { get; set; }
+        public DbSet<Director> Director { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
     }
 }

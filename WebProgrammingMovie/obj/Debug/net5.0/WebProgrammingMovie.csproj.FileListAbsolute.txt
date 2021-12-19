@@ -768,7 +768,6 @@ C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Area
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Photos\Details.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Photos\Edit.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Photos\Index.cshtml.g.cs
-C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\_ViewImports.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Category.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
@@ -778,11 +777,6 @@ C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\n
 C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Movie\Index.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\wwwroot\img\Index (1).cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\wwwroot\img\Index.cshtml.g.cs
-C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Create.cshtml.g.cs
-C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Delete.cshtml.g.cs
-C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Details.cshtml.g.cs
-C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Edit.cshtml.g.cs
-C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Index.cshtml.g.cs
 C:\Users\MuhammetÇağatay\Desktop\WebProgrammingMovie\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\MuhammetÇağatay\Desktop\WebProgrammingMovie\bin\Debug\net5.0\appsettings.json
 C:\Users\MuhammetÇağatay\Desktop\WebProgrammingMovie\bin\Debug\net5.0\WebProgrammingMovie.StaticWebAssets.xml
@@ -1163,3 +1157,24 @@ C:\Users\MuhammetÇağatay\Desktop\Projects\WebProgrammingMovie\obj\Debug\net5.0
 C:\Users\MuhammetÇağatay\Desktop\Projects\WebProgrammingMovie\obj\Debug\net5.0\ref\WebProgrammingMovie.dll
 C:\Users\MuhammetÇağatay\Desktop\Projects\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.pdb
 C:\Users\MuhammetÇağatay\Desktop\Projects\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.genruntimeconfig.cache
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\_ViewImports.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Create.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Delete.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Details.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Edit.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Movie\Index.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Actor\Create.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Actor\Delete.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Actor\Details.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Actor\Edit.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Actor\Index.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Delete.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Details.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Edit.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Director\Create.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Director\Delete.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Director\Details.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Director\Edit.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Admin\Views\Director\Index.cshtml.g.cs

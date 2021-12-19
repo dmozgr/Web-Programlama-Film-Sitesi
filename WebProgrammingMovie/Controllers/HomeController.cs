@@ -25,9 +25,11 @@ namespace WebProgrammingMovie.Controllers
 
         public IActionResult Index()
         {
-            var model = _context.Movie.Include(x=> x.Category).ToList();
-
-            return View(model);
+            var totalmovie = _context.Movie.Include(x => x.Category).ToList();
+            var slidermovie = _context.Movie.Take(1).Include(x => x.Category).ToList();
+            var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(1).Include(x => x.Category).ToList();
+            HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie);
+            return View(homeview);
         }
 
         public IActionResult Privacy()

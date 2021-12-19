@@ -20,7 +20,19 @@
                 @Html.DisplayNameFor(model => model.Review)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.View)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SliderPhotoURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetailPhotoURL)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReleaseDate)
@@ -47,7 +59,19 @@
                 @Html.DisplayFor(modelItem => item.Review)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.View)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SliderPhotoURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetailPhotoURL)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReleaseDate)

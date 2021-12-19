@@ -11,22 +11,22 @@ using WebProgrammingMovie.Models;
 namespace WebProgrammingMovie.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class PhotosController : Controller
+    public class DirectorController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PhotosController(ApplicationDbContext context)
+        public DirectorController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/Photos
+        // GET: Admin/Director
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Photo.ToListAsync());
+            return View(await _context.Director.ToListAsync());
         }
 
-        // GET: Admin/Photos/Details/5
+        // GET: Admin/Director/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,39 +34,39 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var photo = await _context.Photo
+            var director = await _context.Director
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (photo == null)
+            if (director == null)
             {
                 return NotFound();
             }
 
-            return View(photo);
+            return View(director);
         }
 
-        // GET: Admin/Photos/Create
+        // GET: Admin/Director/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Photos/Create
+        // POST: Admin/Director/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PhotoName,MovieId")] Photo photo)
+        public async Task<IActionResult> Create([Bind("Id,DirectorName")] Director director)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(photo);
+                _context.Add(director);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(photo);
+            return View(director);
         }
 
-        // GET: Admin/Photos/Edit/5
+        // GET: Admin/Director/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,22 +74,22 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var photo = await _context.Photo.FindAsync(id);
-            if (photo == null)
+            var director = await _context.Director.FindAsync(id);
+            if (director == null)
             {
                 return NotFound();
             }
-            return View(photo);
+            return View(director);
         }
 
-        // POST: Admin/Photos/Edit/5
+        // POST: Admin/Director/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PhotoName,MovieId")] Photo photo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DirectorName")] Director director)
         {
-            if (id != photo.Id)
+            if (id != director.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(photo);
+                    _context.Update(director);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PhotoExists(photo.Id))
+                    if (!DirectorExists(director.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +114,10 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(photo);
+            return View(director);
         }
 
-        // GET: Admin/Photos/Delete/5
+        // GET: Admin/Director/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,30 +125,30 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var photo = await _context.Photo
+            var director = await _context.Director
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (photo == null)
+            if (director == null)
             {
                 return NotFound();
             }
 
-            return View(photo);
+            return View(director);
         }
 
-        // POST: Admin/Photos/Delete/5
+        // POST: Admin/Director/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var photo = await _context.Photo.FindAsync(id);
-            _context.Photo.Remove(photo);
+            var director = await _context.Director.FindAsync(id);
+            _context.Director.Remove(director);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PhotoExists(int id)
+        private bool DirectorExists(int id)
         {
-            return _context.Photo.Any(e => e.Id == id);
+            return _context.Director.Any(e => e.Id == id);
         }
     }
 }

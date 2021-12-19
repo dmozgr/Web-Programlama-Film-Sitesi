@@ -29,7 +29,7 @@ namespace WebProgrammingMovie.Controllers
             }
             else
             {
-                Movie movie = _context.Movie.Single(x => x.Id == id);
+                Movie movie = _context.Movie.Include(x=>x.Category).Single(x => x.Id == id);
 
                 if(movie ==null)
                 {
@@ -42,5 +42,6 @@ namespace WebProgrammingMovie.Controllers
                 }
             }
         }
+
     }
 }

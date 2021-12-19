@@ -10,8 +10,8 @@ using WebProgrammingMovie.Data;
 namespace WebProgrammingMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211216185356_MovieData")]
-    partial class MovieData
+    [Migration("20211219125407_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -269,12 +269,7 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<string>("DirectorName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
 
                     b.ToTable("Director");
                 });
@@ -292,8 +287,14 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<int>("Country")
                         .HasColumnType("int");
 
-                    b.Property<int>("Duration")
+                    b.Property<string>("DetailPhotoURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DirectorId")
                         .HasColumnType("int");
+
+                    b.Property<double>("Duration")
+                        .HasColumnType("float");
 
                     b.Property<double>("IMDB")
                         .HasColumnType("float");
@@ -308,31 +309,19 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<string>("Review")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("SliderPhotoURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("View")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("DirectorId");
+
                     b.ToTable("Movie");
-                });
-
-            modelBuilder.Entity("WebProgrammingMovie.Models.Photo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PhotoName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("Photo");
                 });
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Rating", b =>
@@ -378,6 +367,9 @@ namespace WebProgrammingMovie.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhotoURL")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
@@ -447,31 +439,19 @@ namespace WebProgrammingMovie.Migrations
                     b.Navigation("Movie");
                 });
 
-            modelBuilder.Entity("WebProgrammingMovie.Models.Director", b =>
-                {
-                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
-                        .WithMany("Director")
-                        .HasForeignKey("MovieId");
-
-                    b.Navigation("Movie");
-                });
-
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
                     b.HasOne("WebProgrammingMovie.Models.Category", "Category")
-                        .WithMany()
+                        .WithMany("movies")
                         .HasForeignKey("CategoryId");
 
+                    b.HasOne("WebProgrammingMovie.Models.Director", "Director")
+                        .WithMany("movies")
+                        .HasForeignKey("DirectorId");
+
                     b.Navigation("Category");
-                });
 
-            modelBuilder.Entity("WebProgrammingMovie.Models.Photo", b =>
-                {
-                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
-                        .WithMany("Photo")
-                        .HasForeignKey("MovieId");
-
-                    b.Navigation("Movie");
+                    b.Navigation("Director");
                 });
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Rating", b =>
@@ -489,13 +469,19 @@ namespace WebProgrammingMovie.Migrations
                     b.Navigation("Movie");
                 });
 
+            modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>
+                {
+                    b.Navigation("movies");
+                });
+
+            modelBuilder.Entity("WebProgrammingMovie.Models.Director", b =>
+                {
+                    b.Navigation("movies");
+                });
+
             modelBuilder.Entity("WebProgrammingMovie.Models.Movie", b =>
                 {
                     b.Navigation("Actor");
-
-                    b.Navigation("Director");
-
-                    b.Navigation("Photo");
 
                     b.Navigation("Rating");
                 });
