@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -12,22 +13,21 @@ namespace WebProgrammingMovie.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public HomeController(ApplicationDbContext context,ILogger<HomeController> logger)
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
         {
-            _logger = logger;
             _context = context;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
-            var totalmovie = _context.Movie.ToList();
-            var slidermovie = _context.Movie.Take(1).ToList();
-            var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(1).ToList();
-            HomeViewModel homeview = new HomeViewModel(totalmovie,trendmovie,slidermovie);
-            return View(homeview);
+            var model = _context.Movie.Include(x=> x.Category).ToList();
+
+            return View(model);
         }
 
         public IActionResult Privacy()

@@ -24,6 +24,7 @@
     <Folder Include="Areas\Uye\Data\" />
     <Folder Include="Areas\Uye\Models\" />
     <Folder Include="Areas\Uye\Views\" />
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

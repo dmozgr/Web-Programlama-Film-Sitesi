@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebProgrammingMovie.Data;
 
 namespace WebProgrammingMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211216185356_MovieData")]
+    partial class MovieData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -248,16 +250,11 @@ namespace WebProgrammingMovie.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
 
                     b.ToTable("Category");
                 });
@@ -295,8 +292,8 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<int>("Country")
                         .HasColumnType("int");
 
-                    b.Property<double>("Duration")
-                        .HasColumnType("float");
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
 
                     b.Property<double>("IMDB")
                         .HasColumnType("float");
@@ -310,9 +307,6 @@ namespace WebProgrammingMovie.Migrations
 
                     b.Property<string>("Review")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("View")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -448,15 +442,6 @@ namespace WebProgrammingMovie.Migrations
                 {
                     b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
                         .WithMany("Actor")
-                        .HasForeignKey("MovieId");
-
-                    b.Navigation("Movie");
-                });
-
-            modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>
-                {
-                    b.HasOne("WebProgrammingMovie.Models.Movie", "Movie")
-                        .WithMany()
                         .HasForeignKey("MovieId");
 
                     b.Navigation("Movie");

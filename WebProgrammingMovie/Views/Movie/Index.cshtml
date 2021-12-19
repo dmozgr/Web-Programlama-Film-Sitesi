@@ -1,4 +1,6 @@
-﻿@model WebProgrammingMovie.Models.Movie
+﻿
+@model Movie
+
 <section class="anime-details spad">
     <div class="container">
         <div class="anime__details__content">
@@ -13,7 +15,7 @@
                     <div class="anime__details__text">
                         <div class="anime__details__title">
                             <h3>@Model.Name</h3>
-                            <span>フェイト／ステイナイト, Feito／sutei naito</span>
+                            <span>@Model.Director</span>
                         </div>
                         <div class="anime__details__rating">
                             <div class="rating">
@@ -26,7 +28,10 @@
                             <span>1.029 Votes</span>
                         </div>
                         <p>
-                            @Model.Review
+                            Every human inhabiting the world of Alcia is branded by a “Count” or a number written on
+                            their body. For Hina’s mother, her total drops to 0 and she’s pulled into the Abyss,
+                            never to be seen again. But her mother’s last words send Hina on a quest to find a
+                            legendary hero from the Waste War - the fabled Ace!
                         </p>
                         <div class="anime__details__widget">
                             <div class="row">

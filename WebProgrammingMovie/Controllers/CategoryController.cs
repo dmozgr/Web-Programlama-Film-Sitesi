@@ -25,27 +25,13 @@ namespace WebProgrammingMovie.Controllers
             return View(await _context.Category.ToListAsync());
         }
 
+        public ActionResult GetRecordsById(int id)
+        {
+            string str = string.Format("The id passed as parameter is: {0}", id);
+            return Ok(str);
+        }
+
         // GET: Category/Details/5
-
-
-        // GET: Category/Creat
-
-        // POST: Category/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-
-
-        // GET: Category/Edit/5
-
-
-        // POST: Category/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-
-
-        // GET: Category/Delete/5
-
-
-        // POST: Category/Delete/5
 
 
     }

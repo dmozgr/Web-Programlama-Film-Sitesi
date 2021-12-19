@@ -18,30 +18,30 @@ namespace WebProgrammingMovie.Models
 
         public string Review { get; set; }
 
-        [Display(Name = "Kategori")]
-        public virtual int? CategoryId { get; set; }
-
+        public int? CategoryId { get; set; }
         [ForeignKey("CategoryId")]
-        public virtual Category Category { get; set; }
+        public Category Category { get; set; }
 
         public ICollection<Photo> Photo { get; set; }
 
-        public ICollection<Actor> Actor { get; set; }
-
-        public ICollection<Director> Director{ get; set; }
-
-        public ICollection<Rating> Rating { get; set; }
-
+        internal static string FirstOrDefault(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
 
         public DateTime ReleaseDate { get; set; }
 
-        public double Duration { get; set; }
-        public int View { get; set; }
+        public int Duration { get; set; }
 
         public double IMDB { get; set; }
 
         public CountryEnum Country { get; set; }
 
+        public ICollection<Actor> Actor { get; set; }
+
+        public ICollection<Director> Director { get; set; }
+
+        public ICollection<Rating> Rating { get; set; }
 
     }
     
