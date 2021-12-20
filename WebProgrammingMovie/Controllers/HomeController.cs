@@ -25,9 +25,9 @@ namespace WebProgrammingMovie.Controllers
 
         public IActionResult Index()
         {
-            var totalmovie = _context.Movie.Include(x => x.Category).ToList();
-            var slidermovie = _context.Movie.Take(1).Include(x => x.Category).ToList();
-            var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(1).Include(x => x.Category).ToList();
+            var totalmovie = _context.Movie.Include(x => x.Category).Include(x=>x.Rating).Include(x => x.Actor).ToList();
+            var slidermovie = _context.Movie.Take(2).Include(x => x.Category).Include(x => x.Rating).Include(x => x.Actor).ToList();
+            var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(2).Include(x => x.Category).Include(x => x.Actor).Include(x => x.Rating).ToList();
 
             HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie,"Yeni Çıkanlar");
 
@@ -35,17 +35,15 @@ namespace WebProgrammingMovie.Controllers
         }
 
         [Route("Home/{id}")]
-        public IActionResult Index(int? Id)
+        public IActionResult GetCategory(int? Id)
         {
-            var totalmovie = _context.Movie.Where(x=> x.CategoryId==Id).Include(x => x.Category).ToList();
-            var slidermovie = _context.Movie.Where(x => x.CategoryId == Id).Take(1).Include(x => x.Category).ToList();
-            var trendmovie = _context.Movie.Where(x => x.CategoryId == Id).OrderByDescending(x => x.IMDB).Take(1).Include(x => x.Category).ToList();
+            var totalmovie = _context.Movie.Include(x => x.Category).Include(x => x.Actor).Include(x => x.Rating).ToList();
+            var slidermovie = _context.Movie.Take(2).Include(x => x.Category).Include(x => x.Actor).Include(x => x.Rating).ToList();
+            var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(2).Include(x => x.Actor).Include(x => x.Category).Include(x => x.Rating).ToList();
             var category = _context.Category.Where(x => x.Id ==Id).ToList();
             var category_name = category.ElementAt(0).Name;
             HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie,category_name);
-            return View(homeview);
-
-
+            return View("Index",homeview);
         }
 
         public IActionResult Privacy()
