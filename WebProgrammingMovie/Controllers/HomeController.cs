@@ -28,8 +28,24 @@ namespace WebProgrammingMovie.Controllers
             var totalmovie = _context.Movie.Include(x => x.Category).ToList();
             var slidermovie = _context.Movie.Take(1).Include(x => x.Category).ToList();
             var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(1).Include(x => x.Category).ToList();
-            HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie);
+
+            HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie,"Yeni Çıkanlar");
+
             return View(homeview);
+        }
+
+        [Route("Home/{id}")]
+        public IActionResult Index(int? Id)
+        {
+            var totalmovie = _context.Movie.Where(x=> x.CategoryId==Id).Include(x => x.Category).ToList();
+            var slidermovie = _context.Movie.Where(x => x.CategoryId == Id).Take(1).Include(x => x.Category).ToList();
+            var trendmovie = _context.Movie.Where(x => x.CategoryId == Id).OrderByDescending(x => x.IMDB).Take(1).Include(x => x.Category).ToList();
+            var category = _context.Category.Where(x => x.Id ==Id).ToList();
+            var category_name = category.ElementAt(0).Name;
+            HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie,category_name);
+            return View(homeview);
+
+
         }
 
         public IActionResult Privacy()

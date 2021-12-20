@@ -1224,12 +1224,6 @@ C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebP
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Category.cshtml.g.cs
-C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
-C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
-C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Details.cshtml.g.cs
-C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
-C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Movie\Index.cshtml.g.cs
@@ -1373,3 +1367,4 @@ C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebP
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Views.pdb
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.csproj.CopyComplete
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.genruntimeconfig.cache
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs

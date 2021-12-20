@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj": {}
+    "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\web-programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj": {
+    "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\web-programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+        "projectUniqueName": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\web-programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
         "projectName": "WebProgrammingMovie",
-        "projectPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+        "projectPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\web-programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
         "packagesPath": "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\obj\\",
+        "outputPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\web-programlama\\WebProgrammingMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MuhammetÇağatay\\AppData\\Roaming\\NuGet\\NuGet.Config",

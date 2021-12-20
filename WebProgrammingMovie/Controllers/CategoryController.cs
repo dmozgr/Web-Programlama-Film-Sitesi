@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using WebProgrammingMovie.Data;
-using WebProgrammingMovie.Models;
 
 namespace WebProgrammingMovie.Controllers
 {
@@ -18,21 +16,80 @@ namespace WebProgrammingMovie.Controllers
         {
             _context = context;
         }
-
-        // GET: Category
-        public async Task<IActionResult> Index()
+        // GET: CategoryController
+        public ActionResult Index()
         {
-            return View(await _context.Category.ToListAsync());
+            var categories = _context.Category.ToList();
+            return View(categories);
         }
 
-        public ActionResult GetRecordsById(int id)
+        // GET: CategoryController/Details/5
+        public ActionResult Details(int id)
         {
-            string str = string.Format("The id passed as parameter is: {0}", id);
-            return Ok(str);
+            return View();
         }
 
-        // GET: Category/Details/5
+        // GET: CategoryController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        // POST: CategoryController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
+        // GET: CategoryController/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: CategoryController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: CategoryController/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: CategoryController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
