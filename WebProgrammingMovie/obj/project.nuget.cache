@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xPmSVYnFjvmcPOFRYuBcblhb33uuETpBZa+QJ8IwrHKhXACvdydM56n/muh0Htq6g/AiAGr6LU5B3baBz6cxzw==",
+  "dgSpecHash": "hyGEBVzWnCzdgG6jSKdkD/RNg6iFEcqMUMOKDpVWPgdTiC813GpI6LaFl5vHHpEeDjargZhkGtW7RDqf0R6YlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+  "projectFilePath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\web-programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.12\\microsoft.aspnetcore.cryptography.internal.5.0.12.nupkg.sha512",
