@@ -41,21 +41,20 @@
 
                     </div>
                     <div class="row">
-                        @{ for (int i = 0; i < 6; i++)
+                        @{ foreach (var item in Model._TotalMovie)
                                         {
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <div class="product__item__pic set-bg" data-setbg="@item.DetailPhotoURL">
+                                        <div class="ep">@item.ReleaseDate.Year</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> @item.Rating.Count()</div>
+                                        <div class="view"><i class="fa fa-eye"></i> @item.View</div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
+                                            <li>@item.Category.Name</li>
                                         </ul>
-                                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                        <h5><a asp-controller="Movie" asp-action="Index" asp-route-id="@item.Id">@item.Name</a></h5>
                                     </div>
                                 </div>
                             </div> } }
@@ -72,27 +71,26 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-title">
-                                <h4>TAVSİYE FİLMLER</h4>
+                                <h4>En Çok İzlenenler</h4>
                             </div>
                         </div>
 
                     </div>
                     <div class="row">
-                        @{ for (int i = 0; i < 2; i++)
+                        @{ foreach (var item in Model._TrendMovie)
                                         {
                             <div class="col-lg-12">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <div class="product__item__pic set-bg" data-setbg="@item.DetailPhotoURL">
+                                        <div class="ep">@item.ReleaseDate.Year</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> @item.Rating.Count()</div>
+                                        <div class="view"><i class="fa fa-eye"></i> @item.View</div>
                                     </div>
                                     <div class="product__item__text">
                                         <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
+                                            <li>@item.Category.Name</li>
                                         </ul>
-                                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                        <h5><a asp-controller="Movie" asp-action="Index" asp-route-id="@item.Id">@item.Name</a></h5>
                                     </div>
                                 </div>
                             </div> } }

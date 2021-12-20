@@ -5,18 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h3 style="color:white">Oyuncular</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a style="color: cornflowerblue" asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.ActorName)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Movie)
             </th>
             <th></th>
@@ -25,16 +25,16 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td  style="color:white">
                 @Html.DisplayFor(modelItem => item.ActorName)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Movie.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a style="color: cornflowerblue" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a style="color: cornflowerblue" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

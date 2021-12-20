@@ -1368,3 +1368,4 @@ C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebP
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.csproj.CopyComplete
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\Web-Programlama\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.genruntimeconfig.cache
 C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
+C:\Users\MuhammetÇağatay\Desktop\Ödevler\web-programming\web-programlama\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Rating\Create.cshtml.g.cs

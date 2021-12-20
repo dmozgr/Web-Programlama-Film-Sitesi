@@ -47,6 +47,13 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
             return View(movie);
         }
 
+        public IActionResult Create()
+        {
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name");
+            ViewData["DirectorId"] = new SelectList(_context.Director, "Id", "DirectorName");
+
+            return View();
+        }
         // POST: Admin/Movie/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
