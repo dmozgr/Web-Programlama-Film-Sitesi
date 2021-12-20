@@ -7498,11 +7498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MuhammetÇağatay\\Documents\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+      "projectUniqueName": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
       "projectName": "WebProgrammingMovie",
-      "projectPath": "C:\\Users\\MuhammetÇağatay\\Documents\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
+      "projectPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\WebProgrammingMovie.csproj",
       "packagesPath": "C:\\Users\\MuhammetÇağatay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MuhammetÇağatay\\Documents\\WebProgrammingMovie\\obj\\",
+      "outputPath": "C:\\Users\\MuhammetÇağatay\\Desktop\\Ödevler\\web-programming\\Web-Programlama\\WebProgrammingMovie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MuhammetÇağatay\\AppData\\Roaming\\NuGet\\NuGet.Config",
