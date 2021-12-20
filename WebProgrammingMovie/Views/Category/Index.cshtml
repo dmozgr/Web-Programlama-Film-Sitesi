@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Kategoriler</h1>
+<h3 style="color:white;">Kategoriler</h3>
 
 <table class="table">
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                <h5><a asp-controller="Home" asp-action="Index" asp-route-id="@item.Id">@item.Name</a></h5>
+                <h6><a asp-controller="Home" asp-action="GetCategory" asp-route-id="@item.Id">@item.Name</a></h6>
             </td>
         </tr>
 }

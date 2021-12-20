@@ -5,45 +5,45 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h3 style="color:white">Filmler</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a style="color:cornflowerblue" asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Review)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.View)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Category)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Director)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.SliderPhotoURL)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.DetailPhotoURL)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.ReleaseDate)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Duration)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.IMDB)
             </th>
-            <th>
+            <th style="color:white">
                 @Html.DisplayNameFor(model => model.Country)
             </th>
             <th></th>
@@ -52,43 +52,43 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Review)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.View)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Director.Id)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.SliderPhotoURL)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.DetailPhotoURL)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.ReleaseDate)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Duration)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.IMDB)
             </td>
-            <td>
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Country)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a style="color: cornflowerblue" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a style="color: cornflowerblue" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
