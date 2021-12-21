@@ -58,7 +58,7 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ActorName,MovieId")] Actor actor)
+        public async Task<IActionResult> Create([Bind("Id,ActorName,PhotoURL,Age,MovieId")] Actor actor)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace WebProgrammingMovie.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ActorName,MovieId")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ActorName,PhotoURL,Age,MovieId")] Actor actor)
         {
             if (id != actor.Id)
             {

@@ -95,6 +95,7 @@ namespace WebProgrammingMovie.Areas.Identity.Pages.Account
                     Surname = Input.SurName,
                     BirthDate = Input.BirthDate,
                     Country = Input.Country,
+                    PhotoURL = Input.PhotoURL
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)

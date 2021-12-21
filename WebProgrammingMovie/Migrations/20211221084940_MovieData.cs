@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebProgrammingMovie.Migrations
 {
-    public partial class Movie : Migration
+    public partial class MovieData : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -226,7 +226,9 @@ namespace WebProgrammingMovie.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ActorName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MovieId = table.Column<int>(type: "int", nullable: true)
+                    MovieId = table.Column<int>(type: "int", nullable: true),
+                    PhotoURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Age = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

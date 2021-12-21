@@ -21,10 +21,11 @@ namespace WebProgrammingMovie.Models
 
         public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public ApplicationUser ApplicationUser { get; set; }
+        public ApplicationUser User { get; set; }
 
         [Range(0, 11)]
         public double Score { get; set; }
+
 
 
 

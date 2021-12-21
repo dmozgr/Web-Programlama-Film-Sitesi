@@ -18,5 +18,9 @@ namespace WebProgrammingMovie.Models
         [ForeignKey("MovieId")]
         public Movie Movie { get; set; }
 
+        public string PhotoURL { get; set; }
+
+        public int Age { get; set; }
+
     }
 }

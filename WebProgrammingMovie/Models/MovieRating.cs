@@ -7,13 +7,15 @@ namespace WebProgrammingMovie.Models
 {
     public class MovieRating
     {
-        public MovieRating(Movie movie,Rating rating)
+        public MovieRating(Movie _movie, List<RatingAndUser> _ratinganduser,double _RatingAvarage)
         {
-            _Movie = movie;
-            _Rating = rating;
-            
+            movie = _movie;
+            ratinganduser = _ratinganduser;
+            RatingAvarage = _RatingAvarage;
+
         }
-        public Movie _Movie { get; set; }
-        public Rating _Rating { get; set; }
+        public Movie movie { get; set; }
+        public List<RatingAndUser> ratinganduser { get; set; }
+        public double RatingAvarage { get; set; }
     }
 }

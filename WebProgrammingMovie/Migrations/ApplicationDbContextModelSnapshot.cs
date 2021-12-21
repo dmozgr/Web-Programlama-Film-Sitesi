@@ -231,8 +231,14 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<string>("ActorName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MovieId")
                         .HasColumnType("int");
+
+                    b.Property<string>("PhotoURL")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -458,13 +464,13 @@ namespace WebProgrammingMovie.Migrations
                         .WithMany("Rating")
                         .HasForeignKey("MovieId");
 
-                    b.HasOne("WebProgrammingMovie.Models.ApplicationUser", "ApplicationUser")
+                    b.HasOne("WebProgrammingMovie.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.Navigation("ApplicationUser");
-
                     b.Navigation("Movie");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>

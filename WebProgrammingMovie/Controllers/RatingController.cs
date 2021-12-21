@@ -23,22 +23,15 @@ namespace WebProgrammingMovie.Controllers
             _context = context;
         }
 
-       
-
-        // GET: Rating/Create
-
         public IActionResult Create(int? id)
         {
             movieId = id;
-            ViewData["UserId"] = new SelectList(_context.ApplicationUser, "Id", "Id");
+            ViewData["UserId"] = new SelectList(_context.ApplicationUser, "Id", "Name");
             ViewData["MovieId"] = new SelectList(_context.Movie, "Id", "Name");
             var model = new Rating() { MovieId=id};
             return View(model);
         }
 
-        // POST: Rating/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Comment,CommentDate,MovieId,UserId,Score")] Rating rating)
@@ -47,17 +40,14 @@ namespace WebProgrammingMovie.Controllers
             {
                 rating.UserId = _UserManager.GetUserId(HttpContext.User);
                 rating.CommentDate = DateTime.Now;
-                
                 _context.Add(rating);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Movie",new { id=rating.MovieId});
             }
-            ViewData["UserId"] = new SelectList(_context.ApplicationUser, "Id", "Id", rating.UserId);
+            ViewData["UserId"] = new SelectList(_context.ApplicationUser, "Id", "Name", rating.UserId);
             ViewData["MovieId"] = new SelectList(_context.Movie, "Id", "Name", rating.MovieId);
             
             return View(rating);
-        }
-
-       
+        } 
     }
 }

@@ -15,9 +15,6 @@ namespace WebProgrammingMovie.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _UserManager;
-        private int? _MovieId;
-
-
 
         public MovieController(ApplicationDbContext context,UserManager<IdentityUser> UserManager)
         {
@@ -28,30 +25,28 @@ namespace WebProgrammingMovie.Controllers
         [Route("Movie/{id}")]
         public IActionResult Index(int? id)
         {
-            if(id ==null)
-            {
-                return null;
-                
-            }
-            else
-            {
-                Movie movie = _context.Movie.Include(x=>x.Category).Include(x => x.Actor).Include(x => x.Rating).Single(x => x.Id == id);
-                MovieRating movierating = new MovieRating(movie, null);
-                if(movie ==null)
-                {
-                    return null;
+            Movie movie = _context.Movie.Include(x=>x.Category).Include(x => x.Actor).Include(x => x.Rating).Single(x => x.Id == id);
+            List<Rating> ratings = _context.Rating.Where(x => x.MovieId == movie.Id).ToList();
+            List<RatingAndUser> ratinganduser = new List<RatingAndUser>();
+            double totalRating = 0;
+            int index = 0;
 
-                }
-                else
-                {
-                    _MovieId = id;
-
-                    return View(movierating);
-                }
+            foreach(var item in ratings)
+            {
+                Rating rating1 = item;
+                ApplicationUser user1 = (ApplicationUser)_context.ApplicationUser.Single(x => x.Id == item.UserId);
+                RatingAndUser firstitem = new RatingAndUser(rating1, user1);
+                ratinganduser.Add(firstitem);
+                totalRating += item.Score;
+                index++;
             }
+            totalRating = totalRating / index;
+
+            MovieRating movieRating = new MovieRating(movie, ratinganduser,totalRating);
+
+            return View(movieRating);        
         }
 
-        // GET: Admin/Movie/Create
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name");
@@ -59,9 +54,6 @@ namespace WebProgrammingMovie.Controllers
             return View();
         }
 
-        // POST: Admin/Movie/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Review,View,CategoryId,DirectorId,SliderPhotoURL,DetailPhotoURL,ReleaseDate,Duration,IMDB,Country")] Movie movie)
@@ -76,33 +68,5 @@ namespace WebProgrammingMovie.Controllers
             ViewData["DirectorId"] = new SelectList(_context.Director, "Id", "DirectorName", movie.DirectorId);
             return View(movie);
         }
-
-        // GET: Admin/Movie/Create
-        public IActionResult RatingCreate()
-        {
-            return View();
-        }
-
-        // POST: Admin/Movie/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RatingCreate([Bind("Id,Comment,CommentDate,MovieId,UserId,Score")] MovieRating rating1)
-        {
-            if (ModelState.IsValid)
-            {
-                Rating rating = rating1._Rating;
-                rating.MovieId = _MovieId;
-                rating.CommentDate = DateTime.Now;
-                rating.UserId = _UserManager.GetUserId(HttpContext.User);
-                _context.Add(rating);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(rating1);
-        }
-
-
     }
 }

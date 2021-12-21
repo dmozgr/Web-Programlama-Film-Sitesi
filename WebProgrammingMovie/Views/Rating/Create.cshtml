@@ -18,6 +18,8 @@
                 <input asp-for="Comment" class="form-control" />
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
+            <label for="pet-select">Choose a pet:</label>
+
             <div class="form-group">
                 <label asp-for="Score" class="control-label"></label>
                 <input asp-for="Score" class="form-control" />
@@ -27,6 +29,10 @@
 
             <div class="form-group">
                 <a asp-controller="Movie" asp-action="Index" asp-route-id="@Model.MovieId"><input type="submit" value="Create" class="btn btn-primary"</input> </a>
+            </div>
+
+            <div>
+                <a asp-controller="Movie" asp-action="Index" asp-route-id="@Model.MovieId">Geri Dön</a>
             </div>
         </form>
     </div>

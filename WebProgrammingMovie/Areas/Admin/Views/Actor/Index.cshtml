@@ -19,17 +19,24 @@
             <th style="color:white">
                 @Html.DisplayNameFor(model => model.Movie)
             </th>
+            <th style="color:white">
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td  style="color:white">
+            <td style="color:white">
                 @Html.DisplayFor(modelItem => item.ActorName)
             </td>
             <td style="color:white">
                 @Html.DisplayFor(modelItem => item.Movie.Name)
+            </td>
+            <td style="color:white">
+                @Html.DisplayFor(modelItem => item.Age)
             </td>
             <td>
                 <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

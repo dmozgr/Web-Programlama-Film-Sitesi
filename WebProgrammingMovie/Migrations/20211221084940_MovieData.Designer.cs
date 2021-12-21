@@ -10,8 +10,8 @@ using WebProgrammingMovie.Data;
 namespace WebProgrammingMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211219132511_Movie")]
-    partial class Movie
+    [Migration("20211221084940_MovieData")]
+    partial class MovieData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -233,8 +233,14 @@ namespace WebProgrammingMovie.Migrations
                     b.Property<string>("ActorName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
                     b.Property<int?>("MovieId")
                         .HasColumnType("int");
+
+                    b.Property<string>("PhotoURL")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -460,13 +466,13 @@ namespace WebProgrammingMovie.Migrations
                         .WithMany("Rating")
                         .HasForeignKey("MovieId");
 
-                    b.HasOne("WebProgrammingMovie.Models.ApplicationUser", "ApplicationUser")
+                    b.HasOne("WebProgrammingMovie.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.Navigation("ApplicationUser");
-
                     b.Navigation("Movie");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WebProgrammingMovie.Models.Category", b =>
