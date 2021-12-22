@@ -47,8 +47,8 @@ namespace WebProgrammingMovie.Data
 
             _userManager.CreateAsync(new ApplicationUser
             {
-                UserName = "admin@gmail.com",
-                Email = "admin@gmail.com",
+                UserName = "b201210400@sakarya.edu.tr",
+                Email = "b201210400@sakarya.edu.tr",
                 Name = "Umut ",
                 Surname="DELİMEHMETOGLU",
                 EmailConfirmed = true,
@@ -56,7 +56,7 @@ namespace WebProgrammingMovie.Data
             }, "Admin123*").GetAwaiter().GetResult();
 
 
-            _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "admin@gmail.com").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();
+            _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "b201210400@sakarya.edu.tr").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();
 
         }
     }

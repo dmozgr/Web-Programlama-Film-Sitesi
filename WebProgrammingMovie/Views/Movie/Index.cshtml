@@ -79,9 +79,15 @@
                                 <p>
                                     @item.rating.Comment
                                 </p>
+
+
                             </div>
+
                             <div>
                                 <h6 style="color:white">Puan: @item.rating.Score<span></span></h6>
+                            </div>
+                            <div class="thumbnail">
+                                <a href="">Delete</a>
                             </div>
                         </div>
                     }
@@ -90,13 +96,13 @@
 
                 @if (User.IsInRole("Uye"))
                 {
-                        <a asp-controller="Rating" asp-action="Create" asp-route-id="@Model.movie.Id">Yorum Yap</a>
+                    <a asp-controller="Rating" asp-action="Create" asp-route-id="@Model.movie.Id">Yorum Yap</a>
                 }
 
-                
+
 
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="trending__product">
                     <div class="row">
                         <div class="col-lg-12">
@@ -106,20 +112,27 @@
                         </div>
 
                     </div>
-                    <div class="row">
-                        @{ foreach (var item in Model.movie.Actor)
-                            {
-                                <div class="col-lg-12">
-                                    <div class="product__item">
-                                        <div class="product__item__pic set-bg"  data-setbg="@item.PhotoURL">
-                                            <div class="ep">@item.Age</div>
-                                        </div>
-                                        <div class="product__item__text">
-                                            <h5><a asp-controller="Movie" asp-action="Index" asp-route-id="@item.Id">@item.ActorName</a></h5>
-                                        </div>
-                                    </div>
-                                </div> } }
-                    </div>
+                    <section class="hero">
+                        <div class="container">
+                            <div class="hero__slider owl-carousel">
+                                @{ foreach (var item in Model.movie.Actor)
+                                    {
+                                        <div class="hero__items set-bg" data-setbg="@item.PhotoURL">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="hero__text">
+                                                        <div class="label">@item.Age</div>
+                                                        <h2></h2>
+                                                        <h2>@item.ActorName</h2>
+                                                        <i class="fa fa-angle-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> } }
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
             </div>
         </div>
