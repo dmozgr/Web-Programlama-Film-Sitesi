@@ -1,5 +1,5 @@
 # 
-# WholeSaler
+# Movies
 
 Sakarya University - Web Programming Project
 
