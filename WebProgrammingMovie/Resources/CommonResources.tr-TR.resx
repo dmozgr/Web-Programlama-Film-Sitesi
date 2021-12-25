@@ -204,6 +204,9 @@
   <data name="User" xml:space="preserve">
     <value>Kullanıcı Paneli</value>
   </data>
+  <data name="UserPhoto" xml:space="preserve">
+    <value>Kullanıcı Fotoğrafı</value>
+  </data>
   <data name="VerifyPassword" xml:space="preserve">
     <value>Şifreyi Doğrula</value>
   </data>

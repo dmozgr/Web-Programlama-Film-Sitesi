@@ -40,7 +40,14 @@ namespace WebProgrammingMovie.Controllers
                 totalRating += item.Score;
                 index++;
             }
-            totalRating = totalRating / index;
+            if(index != 0 )
+            {
+                totalRating = totalRating / index;
+            }
+            else
+            {
+                totalRating = 0;
+            }
 
             MovieRating movieRating = new MovieRating(movie, ratinganduser,totalRating);
 

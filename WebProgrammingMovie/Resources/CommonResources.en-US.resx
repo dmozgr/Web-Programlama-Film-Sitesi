@@ -210,6 +210,9 @@
   <data name="User" xml:space="preserve">
     <value>User Panel</value>
   </data>
+  <data name="UserPhoto" xml:space="preserve">
+    <value>User's Photo</value>
+  </data>
   <data name="VerifyPassword" xml:space="preserve">
     <value>Verify Password</value>
   </data>
