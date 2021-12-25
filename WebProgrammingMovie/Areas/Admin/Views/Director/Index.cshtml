@@ -5,16 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3 style="color:cornflowerblue">Yönetmenler</h3>
+<h3 style="color:cornflowerblue">@Localizer["Director"]</h3>
 
 <p>
-    <a style="color: cornflowerblue" asp-action="Create">Create New</a>
+    <a style="color: cornflowerblue" asp-action="Create">@SharedLocalizer["Create"]</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th style="color:white">
-                @Html.DisplayNameFor(model => model.DirectorName)
+                @Localizer["Name"]
             </th>
             <th></th>
         </tr>
@@ -26,9 +26,9 @@
                 @Html.DisplayFor(modelItem => item.DirectorName)
             </td>
             <td style="color:white">
-                <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a style="color: cornflowerblue" asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a style="color: cornflowerblue" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a style="color: cornflowerblue" asp-action="Edit" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a> |
+                <a style="color: cornflowerblue" asp-action="Details" asp-route-id="@item.Id">@SharedLocalizer["Detail"]</a> |
+                <a style="color: cornflowerblue" asp-action="Delete" asp-route-id="@item.Id">@SharedLocalizer["Delete"]</a>
             </td>
         </tr>
 }

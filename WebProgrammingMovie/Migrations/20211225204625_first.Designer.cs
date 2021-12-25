@@ -10,8 +10,8 @@ using WebProgrammingMovie.Data;
 namespace WebProgrammingMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211222231322_adminekle")]
-    partial class adminekle
+    [Migration("20211225204625_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

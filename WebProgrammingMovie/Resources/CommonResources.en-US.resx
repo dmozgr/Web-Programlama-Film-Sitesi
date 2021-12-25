@@ -126,17 +126,47 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin Panel</value>
   </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Birth Date</value>
+  </data>
   <data name="Category" xml:space="preserve">
     <value>Category</value>
   </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="CreateNewRecord" xml:space="preserve">
+    <value>Create New Account</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="Director" xml:space="preserve">
     <value>Director</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>Forget Password ?</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home Page</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
+  </data>
+  <data name="LocalAccount" xml:space="preserve">
+    <value>Use a local account </value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
@@ -147,16 +177,40 @@
   <data name="Movie" xml:space="preserve">
     <value>Movie</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="newMovie" xml:space="preserve">
     <value>New Movie</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PhotoURL" xml:space="preserve">
+    <value>Photo Address</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="Registerr" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="Sign" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="trendMovie" xml:space="preserve">
     <value>Trend Movie</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>User Panel</value>
+  </data>
+  <data name="VerifyPassword" xml:space="preserve">
+    <value>Verify Password</value>
   </data>
 </root>

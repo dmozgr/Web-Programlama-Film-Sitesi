@@ -26,6 +26,7 @@
     <Folder Include="Areas\Uye\Models\" />
     <Folder Include="Areas\Uye\Views\" />
     <Folder Include="Data\Migrations\" />
+    <Folder Include="Resources\Views\Movie\" />
     <Folder Include="wwwroot\img\filmfoto\" />
   </ItemGroup>
 

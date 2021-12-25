@@ -2,3 +2,7 @@
 @using WebProgrammingMovie.Areas.Identity
 @using WebProgrammingMovie.Areas.Identity.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebProgrammingMovie
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer

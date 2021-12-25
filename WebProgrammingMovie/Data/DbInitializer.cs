@@ -53,7 +53,7 @@ namespace WebProgrammingMovie.Data
                 Surname="DELİMEHMETOGLU",
                 EmailConfirmed = true,
                 PhoneNumber = "1112223333"
-            }, "Admin123*").GetAwaiter().GetResult();
+            }, "123").GetAwaiter().GetResult();
 
 
             _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "b201210400@sakarya.edu.tr").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();

@@ -126,17 +126,47 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin Paneli</value>
   </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Doğum Tarihi</value>
+  </data>
   <data name="Category" xml:space="preserve">
     <value>Kategori</value>
   </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ülke</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Yeni Ekle</value>
+  </data>
+  <data name="CreateNewRecord" xml:space="preserve">
+    <value>Yeni Kayıt Oluştur</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
   <data name="Director" xml:space="preserve">
     <value>Yapımcı</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>Şifrenizi mi unuttunuz ?</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Ana Sayfa</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Diller</value>
+  </data>
+  <data name="LocalAccount" xml:space="preserve">
+    <value>Giriş Yapmak İçin Yerel Bir Hesap Kullanın</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş</value>
@@ -147,10 +177,34 @@
   <data name="Movie" xml:space="preserve">
     <value>Filmler</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>İsim</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="PhotoURL" xml:space="preserve">
+    <value>Fotoğraf Adresi</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Kayıt</value>
   </data>
+  <data name="Registerr" xml:space="preserve">
+    <value>Kayıt Ol</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Beni Hatırla</value>
+  </data>
+  <data name="Sign" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Soyisim</value>
+  </data>
   <data name="User" xml:space="preserve">
     <value>Kullanıcı Paneli</value>
+  </data>
+  <data name="VerifyPassword" xml:space="preserve">
+    <value>Şifreyi Doğrula</value>
   </data>
 </root>
