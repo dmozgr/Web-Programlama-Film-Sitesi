@@ -15,3 +15,8 @@ Sakarya University - Web Programming Project - This application is Movie WebSite
 * Entity Framework Core ORM
 * Bootstrap
 * FontAwesome
+
+## Prepared By
+
+* Umut Özgür DELİMEHMETOĞLU - B201210400
+* Muhammet ÇAĞATAY - G191210025
