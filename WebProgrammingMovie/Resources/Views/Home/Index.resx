@@ -117,46 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="About" xml:space="preserve">
-    <value>Hakkında</value>
-  </data>
-  <data name="Actor" xml:space="preserve">
-    <value>Oyuncu</value>
-  </data>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin Paneli</value>
-  </data>
-  <data name="Category" xml:space="preserve">
-    <value>Kategori</value>
-  </data>
-  <data name="Director" xml:space="preserve">
-    <value>Yapımcı</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Ana Sayfa</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Diller</value>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>Giriş</value>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Çıkış için tıklayınız</value>
-  </data>
-  <data name="Movie" xml:space="preserve">
-    <value>Filmler</value>
-  </data>
-  <data name="newMovie" xml:space="preserve">
-    <value>Yeni Çıkanlar</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Kayıt</value>
-  </data>
-  <data name="trendMovie" xml:space="preserve">
-    <value>En Çok İzlenenler</value>
-  </data>
-  <data name="User" xml:space="preserve">
-    <value>Kullanıcı Paneli</value>
+  <data name="Testing" xml:space="preserve">
+    <value>Deneme</value>
   </data>
 </root>

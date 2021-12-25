@@ -1370,11 +1370,13 @@ C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Area
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Rating\Create.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\bin\Debug\net5.0\en-US\WebProgrammingMovie.resources.dll
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\bin\Debug\net5.0\tr-TR\WebProgrammingMovie.resources.dll
-C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.lang.resources
-C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.lang.en-US.resources
-C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.lang.tr-TR.resources
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.csproj.GenerateResource.cache
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\en-US\WebProgrammingMovie.resources.dll
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\tr-TR\WebProgrammingMovie.resources.dll
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Uye\Views\User\Details.cshtml.g.cs
 C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Areas\Uye\_ViewImports.cshtml.g.cs
+C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.CommonResources.resources
+C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.Views.Home.Index.resources
+C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.CommonResources.en-US.resources
+C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\WebProgrammingMovie.Resources.CommonResources.tr-TR.resources
+C:\Users\dmozgr\Documents\GitHub\WebProgrammingMovie\obj\Debug\net5.0\Razor\Views\Shared\_SelectLanguagePartial.cshtml.g.cs

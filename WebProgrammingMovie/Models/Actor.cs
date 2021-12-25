@@ -14,12 +14,14 @@ namespace WebProgrammingMovie.Models
         [Display(Name = "Oyuncu Adı")]
         public string ActorName { get; set; }
 
+        [Display(Name = "Oynadığı Film")]
         public int? MovieId { get; set; }
         [ForeignKey("MovieId")]
         public Movie Movie { get; set; }
 
         public string PhotoURL { get; set; }
 
+        [Display(Name = "Oyuncu Yaşı")]
         public int Age { get; set; }
 
     }

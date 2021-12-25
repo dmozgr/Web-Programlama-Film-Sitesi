@@ -47,26 +47,5 @@ namespace WebProgrammingMovie.Controllers
             return View(movieRating);        
         }
 
-        public IActionResult Create()
-        {
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name");
-            ViewData["DirectorId"] = new SelectList(_context.Director, "Id", "DirectorName");
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Review,View,CategoryId,DirectorId,SliderPhotoURL,DetailPhotoURL,ReleaseDate,Duration,IMDB,Country")] Movie movie)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(movie);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Name", movie.CategoryId);
-            ViewData["DirectorId"] = new SelectList(_context.Director, "Id", "DirectorName", movie.DirectorId);
-            return View(movie);
-        }
     }
 }

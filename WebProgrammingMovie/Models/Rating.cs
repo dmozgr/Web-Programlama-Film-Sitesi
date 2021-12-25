@@ -14,7 +14,6 @@ namespace WebProgrammingMovie.Models
         public string Comment { get; set; }
 
         public DateTime CommentDate { get; set; } = DateTime.Now;
-
         public int? MovieId { get; set; }
         [ForeignKey("MovieId")]
         public Movie Movie { get; set; }

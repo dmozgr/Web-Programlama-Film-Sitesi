@@ -10,6 +10,7 @@ using WebProgrammingMovie.Data;
 using WebProgrammingMovie.Models;
 using Microsoft.AspNetCore.Session;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 
 namespace WebProgrammingMovie.Controllers
 {
@@ -24,7 +25,7 @@ namespace WebProgrammingMovie.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(string? culture="tr-TR")
+        public IActionResult Index()
         {
             int movieCount = _context.Movie.Count();
 
@@ -33,7 +34,6 @@ namespace WebProgrammingMovie.Controllers
             var trendmovie = _context.Movie.OrderByDescending(x => x.IMDB).Take(5).Include(x => x.Category).Include(x => x.Actor).Include(x => x.Rating).ToList();
 
             HomeViewModel homeview = new HomeViewModel(totalmovie, trendmovie, slidermovie,"Yeni Çıkanlar");
-            HttpContext.Session.SetString("language", culture);
             return View(homeview);
         }
 
@@ -53,6 +53,18 @@ namespace WebProgrammingMovie.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            return LocalRedirect(returnUrl);
         }
     }
 }

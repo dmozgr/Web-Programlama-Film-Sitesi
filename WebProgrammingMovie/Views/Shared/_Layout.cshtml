@@ -2,8 +2,9 @@
 @using Microsoft.Extensions.Localization
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-@inject IStringLocalizer<lang> lang
-
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject IHtmlLocalizer<CommonResources> SharedLocalizer
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Netflix_logo.svg/2560px-Netflix_logo.svg.png" alt="">
                         </a>
                     </div>
@@ -40,35 +41,31 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Home"]</a></li>
+                                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">@SharedLocalizer["Home"]</a></li>
                                 <li>
-                                    <a asp-area="" asp-controller="Category" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Category"] </a>
+                                    <a asp-area="" asp-controller="Category" asp-action="Index">@SharedLocalizer["Category"]</a>
 
                                 </li>
                                 @if (User.IsInRole("Admin"))
                                 {
                                     <li>
-                                        <a asp-area="Admin" asp-controller="Movie" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Admin"]</a>
+                                        <a asp-area="Admin" asp-controller="Movie" asp-action="Index">@SharedLocalizer["Admin"]</a>
                                         <ul class="dropdown">
-                                            <li><a asp-area="Admin" asp-controller="Movie" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Movie"]</a></li>
-                                            <li><a asp-area="Admin" asp-controller="Category" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Category"]</a></li>
-                                            <li><a asp-area="Admin" asp-controller="Director" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Director"]</a></li>
-                                            <li><a asp-area="Admin" asp-controller="Actor" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Actor"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Movie" asp-action="Index">@SharedLocalizer["Movie"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Category" asp-action="Index"> @SharedLocalizer["Category"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Director" asp-action="Index">@SharedLocalizer["Director"]</a></li>
+                                            <li><a asp-area="Admin" asp-controller="Actor" asp-action="Index">@SharedLocalizer["Actor"]</a></li>
                                         </ul>
                                     </li>
                                 }
                                 @if (User.IsInRole("Uye"))
                                 {
                                     <li>
-                                        <a asp-area="Uye" asp-controller="User" asp-action="Details">@lang["User"]</a>   
+                                        <a asp-area="Uye" asp-controller="User" asp-action="Details">User</a>
                                     </li>
-}
-                                <li>
-                                    <a style="color:darkred">@lang["Language"]</a>
-                                    <ul class="dropdown">
-                                        <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="tr-TR">Turkish</a></li>
-                                        <li><a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="en-US">English</a></li>
-                                    </ul>
+                                }
+                                <li class="nav-item float-right">
+                                    @await Html.PartialAsync("_SelectLanguagePartial")
                                 </li>
                             </ul>
 
@@ -80,18 +77,18 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                        <button type="submit" class="nav-link btn btn-link text-dark">@lang["Logout"]</button>
+                        <button type="submit" class="nav-link btn btn-link text-dark"></button>
                     </form> }
                 else
                 {
                     <div class="col-lg-1">
                         <div class="header__right">
-                            <a style="font-size: 18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register" asp-route-culture="@Context.Session.GetString("language")">@lang["Register"]</a>
+                            <a style="font-size: 18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
                         </div>
                     </div>
                     <div class="col-lg-1">
                         <div class="header__right">
-                            <a style="font-size:18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login" asp-route-culture="@Context.Session.GetString("language")">@lang["Login"]</a>
+                            <a style="font-size:18px" class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login"> Login</a>
                         </div>
                     </div>}
             </div>
@@ -119,8 +116,8 @@
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <ul>
-                            <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Home"]</a></li>
-                            <li><a asp-controller="Category" asp-action="Index" asp-route-culture="@Context.Session.GetString("language")">@lang["Category"]</a></li>
+                            <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index"></a>Home</li>
+                            <li><a asp-controller="Category" asp-action="Index"></a> Kategori</li>
                         </ul>
                     </div>
                 </div>

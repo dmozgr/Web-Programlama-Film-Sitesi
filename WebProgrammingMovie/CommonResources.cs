@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebProgrammingMovie
 {
-    public class lang
+    public class CommonResources
     {
     }
 }
